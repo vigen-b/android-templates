@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVP Template</string>
+    <string name="loadweather">Load Weather</string>
+</resources>
