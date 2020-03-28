@@ -1,19 +1,23 @@
 package org.baghdasaryan.mvpdagger2template.main;
 
-import org.baghdasaryan.mvpdagger2template.di.DependencyInjector;
-import org.baghdasaryan.mvpdagger2template.repository.model.Rain;
-import org.baghdasaryan.mvpdagger2template.repository.model.Weather;
-import org.baghdasaryan.mvpdagger2template.repository.WeatherRepository;
-import org.baghdasaryan.mvpdagger2template.repository.model.WeatherState;
+import org.baghdasaryan.mvpdagger2template.data.model.Rain;
+import org.baghdasaryan.mvpdagger2template.data.model.Weather;
+import org.baghdasaryan.mvpdagger2template.data.WeatherRepository;
+import org.baghdasaryan.mvpdagger2template.data.model.WeatherState;
+
+import javax.inject.Inject;
+
+import androidx.annotation.Nullable;
 
 public class MainPresenter implements MainContract.Presenter {
 
+    @Nullable
     private MainContract.View view;
     private WeatherRepository weatherRepository;
 
-    public MainPresenter(MainContract.View v, DependencyInjector di) {
-        view = v;
-        weatherRepository = di.weatherRepository();
+    @Inject
+    public MainPresenter(WeatherRepository weatherRepository) {
+        this.weatherRepository = weatherRepository;
     }
 
     @Override
@@ -44,7 +48,12 @@ public class MainPresenter implements MainContract.Presenter {
     }
 
     @Override
-    public void onDestroy() {
+    public void takeView(MainContract.View view) {
+        this.view = view;
+    }
+
+    @Override
+    public void dropView() {
         view = null;
     }
 }

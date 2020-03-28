@@ -1,8 +1,8 @@
-package org.baghdasaryan.mvpdagger2template.repository;
+package org.baghdasaryan.mvpdagger2template.data;
 
 import com.google.gson.Gson;
 
-import org.baghdasaryan.mvpdagger2template.repository.model.Weather;
+import org.baghdasaryan.mvpdagger2template.data.model.Weather;
 
 import java.util.Random;
 

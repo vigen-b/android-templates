@@ -1,7 +1,7 @@
 package org.baghdasaryan.mvpdagger2template.di;
 
-import org.baghdasaryan.mvpdagger2template.repository.WeatherRepository;
-import org.baghdasaryan.mvpdagger2template.repository.WeatherRepositoryImpl;
+import org.baghdasaryan.mvpdagger2template.data.WeatherRepository;
+import org.baghdasaryan.mvpdagger2template.data.WeatherRepositoryImpl;
 
 public class DependenceInjectorImpl implements DependencyInjector {
     @Override

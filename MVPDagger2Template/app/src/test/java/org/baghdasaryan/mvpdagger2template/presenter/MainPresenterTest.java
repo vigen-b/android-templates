@@ -2,10 +2,10 @@ package org.baghdasaryan.mvpdagger2template.presenter;
 
 import org.baghdasaryan.mvpdagger2template.di.DependencyInjector;
 import org.baghdasaryan.mvpdagger2template.main.MainPresenter;
-import org.baghdasaryan.mvpdagger2template.repository.WeatherRepository;
-import org.baghdasaryan.mvpdagger2template.repository.model.Rain;
-import org.baghdasaryan.mvpdagger2template.repository.model.Weather;
-import org.baghdasaryan.mvpdagger2template.repository.model.WeatherState;
+import org.baghdasaryan.mvpdagger2template.data.WeatherRepository;
+import org.baghdasaryan.mvpdagger2template.data.model.Rain;
+import org.baghdasaryan.mvpdagger2template.data.model.Weather;
+import org.baghdasaryan.mvpdagger2template.data.model.WeatherState;
 import org.baghdasaryan.mvpdagger2template.main.MainContract;
 import org.junit.After;
 import org.junit.Before;

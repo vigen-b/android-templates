@@ -8,25 +8,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import org.baghdasaryan.mvpdagger2template.di.DependenceInjectorImpl;
+import org.baghdasaryan.mvpdagger2template.TemplateApplication;
 import org.baghdasaryan.mvpdagger2template.R;
-import org.baghdasaryan.mvpdagger2template.repository.model.WeatherState;
+import org.baghdasaryan.mvpdagger2template.data.model.WeatherState;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+@Singleton
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 
-    private MainContract.Presenter presenter;
+    @Inject
+    MainContract.Presenter presenter;
     private ImageView imageView;
     private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ((TemplateApplication) getApplicationContext()).getAppComponent().inject(this);
+        presenter.takeView(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         imageView = findViewById(R.id.imageView);
         button = findViewById(R.id.button);
 
-        setPresenter(new MainPresenter(this, new DependenceInjectorImpl()));
         presenter.onViewCreated();
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -38,13 +45,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
-    public void setPresenter(MainContract.Presenter presenter) {
-        this.presenter = presenter;
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
     protected void onDestroy() {
-        presenter.onDestroy();
+        presenter.dropView();
         super.onDestroy();
     }
 

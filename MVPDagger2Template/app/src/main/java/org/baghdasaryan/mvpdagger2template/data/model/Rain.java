@@ -1,4 +1,4 @@
-package org.baghdasaryan.mvpdagger2template.repository.model;
+package org.baghdasaryan.mvpdagger2template.data.model;
 
 public class Rain {
     private int amount;
