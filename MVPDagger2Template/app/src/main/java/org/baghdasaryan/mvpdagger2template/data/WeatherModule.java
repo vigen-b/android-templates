@@ -2,14 +2,12 @@ package org.baghdasaryan.mvpdagger2template.data;
 
 import javax.inject.Singleton;
 
+import dagger.Binds;
 import dagger.Module;
-import dagger.Provides;
 
 @Module
-public class WeatherModule {
+public abstract class WeatherModule {
     @Singleton
-    @Provides
-    public WeatherRepository providesWeatherRepository() {
-        return new WeatherRepositoryImpl();
-    }
+    @Binds
+    public abstract WeatherRepository providesWeatherRepository(WeatherRepositoryImpl weatherRepository);
 }
