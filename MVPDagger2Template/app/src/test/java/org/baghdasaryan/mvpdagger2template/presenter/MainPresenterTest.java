@@ -1,6 +1,5 @@
 package org.baghdasaryan.mvpdagger2template.presenter;
 
-import org.baghdasaryan.mvpdagger2template.di.DependencyInjector;
 import org.baghdasaryan.mvpdagger2template.main.MainPresenter;
 import org.baghdasaryan.mvpdagger2template.data.WeatherRepository;
 import org.baghdasaryan.mvpdagger2template.data.model.Rain;
@@ -23,20 +22,19 @@ public class MainPresenterTest {
     @Mock
     private MainContract.View mockMainActivity;
 
-    private DependencyInjector dependencyInjector = new StubDependencyInjector();
-
     private MainPresenter presenter;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        presenter = new MainPresenter(mockMainActivity, dependencyInjector);
+        presenter = new MainPresenter(new StubWeatherRepository());
+        presenter.takeView(mockMainActivity);
     }
 
     @After
     public void tearDown() {
         if (presenter != null) {
-            presenter.onDestroy();
+            presenter.dropView();
         }
     }
 
@@ -46,14 +44,6 @@ public class MainPresenterTest {
         verify(mockMainActivity).displayWeatherState(WeatherState.RAIN);
     }
 
-}
-
-class StubDependencyInjector implements DependencyInjector {
-
-    @Override
-    public WeatherRepository weatherRepository() {
-        return new StubWeatherRepository();
-    }
 }
 
 class StubWeatherRepository implements WeatherRepository {
