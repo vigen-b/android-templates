@@ -1,11 +1,10 @@
-package org.baghdasaryan.mvptemplate.presenter;
+package org.baghdasaryan.mvptemplate.main;
 
-import org.baghdasaryan.mvptemplate.DependencyInjector;
+import org.baghdasaryan.mvptemplate.di.DependencyInjector;
 import org.baghdasaryan.mvptemplate.repository.model.Rain;
 import org.baghdasaryan.mvptemplate.repository.model.Weather;
 import org.baghdasaryan.mvptemplate.repository.WeatherRepository;
 import org.baghdasaryan.mvptemplate.repository.model.WeatherState;
-import org.baghdasaryan.mvptemplate.view.main.MainContract;
 
 public class MainPresenter implements MainContract.Presenter {
 

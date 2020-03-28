@@ -1,4 +1,4 @@
-package org.baghdasaryan.mvptemplate;
+package org.baghdasaryan.mvptemplate.di;
 
 import org.baghdasaryan.mvptemplate.repository.WeatherRepository;
 

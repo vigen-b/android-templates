@@ -1,11 +1,12 @@
 package org.baghdasaryan.mvptemplate.presenter;
 
-import org.baghdasaryan.mvptemplate.DependencyInjector;
+import org.baghdasaryan.mvptemplate.di.DependencyInjector;
+import org.baghdasaryan.mvptemplate.main.MainPresenter;
 import org.baghdasaryan.mvptemplate.repository.WeatherRepository;
 import org.baghdasaryan.mvptemplate.repository.model.Rain;
 import org.baghdasaryan.mvptemplate.repository.model.Weather;
 import org.baghdasaryan.mvptemplate.repository.model.WeatherState;
-import org.baghdasaryan.mvptemplate.view.main.MainContract;
+import org.baghdasaryan.mvptemplate.main.MainContract;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

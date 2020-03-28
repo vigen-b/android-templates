@@ -1,4 +1,4 @@
-package org.baghdasaryan.mvptemplate.view.main;
+package org.baghdasaryan.mvptemplate.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import org.baghdasaryan.mvptemplate.DependenceInjectorImpl;
+import org.baghdasaryan.mvptemplate.di.DependenceInjectorImpl;
 import org.baghdasaryan.mvptemplate.R;
-import org.baghdasaryan.mvptemplate.presenter.MainPresenter;
 import org.baghdasaryan.mvptemplate.repository.model.WeatherState;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {

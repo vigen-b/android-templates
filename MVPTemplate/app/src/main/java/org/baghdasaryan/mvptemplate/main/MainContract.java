@@ -1,7 +1,7 @@
-package org.baghdasaryan.mvptemplate.view.main;
+package org.baghdasaryan.mvptemplate.main;
 
-import org.baghdasaryan.mvptemplate.presenter.BasePresenter;
-import org.baghdasaryan.mvptemplate.view.BaseView;
+import org.baghdasaryan.mvptemplate.common.BasePresenter;
+import org.baghdasaryan.mvptemplate.common.BaseView;
 import org.baghdasaryan.mvptemplate.repository.model.WeatherState;
 
 public interface MainContract {
